@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\realdnchka\\RiderProjects\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "/Users/danilch/projects/item-rpg-generator-training-c-sharp/ConsoleApp1/ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\realdnchka\\RiderProjects\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "/Users/danilch/projects/item-rpg-generator-training-c-sharp/ConsoleApp1/ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\realdnchka\\RiderProjects\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "/Users/danilch/projects/item-rpg-generator-training-c-sharp/ConsoleApp1/ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\realdnchka\\RiderProjects\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\realdnchka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\realdnchka\\RiderProjects\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "projectPath": "/Users/danilch/projects/item-rpg-generator-training-c-sharp/ConsoleApp1/ConsoleApp1.csproj",
+        "packagesPath": "/Users/danilch/.nuget/packages/",
+        "outputPath": "/Users/danilch/projects/item-rpg-generator-training-c-sharp/ConsoleApp1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\realdnchka\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/danilch/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -50,7 +50,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\realdnchka\\.dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }

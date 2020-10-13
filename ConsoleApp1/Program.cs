@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ConsoleApp1
 {
@@ -15,53 +16,30 @@ namespace ConsoleApp1
 
     class Item
     {
+        private protected static Random Rnd = new Random();
         private protected ItemRare Rare;
         private protected int Cost;
         private protected int MinLvl;
         private protected string Name;
-        private protected static Random Rnd = new Random();
-        private int _rndRare = Rnd.Next(1, Enum.GetNames(typeof(ItemRare)).Length);
         private protected int Str;
         private protected int Agl;
         private protected int Intl;
 
         protected Item()
         {
+            Rare = IGenRare.GenRare();
             SetType();
-            SetRare();
             Cost = Rnd.Next(100, 200);
             MinLvl = Rnd.Next(1, 30);
             Name = NameGenerator();
             SetAttr();
         }
-
-        private void SetRare()
-        {
-            switch (_rndRare)
-            {
-                case 1:
-                    Rare = ItemRare.Common;
-                    break;
-                case 2:
-                    Rare = ItemRare.Rare;
-                    break;
-                case 3:
-                    Rare = ItemRare.Mythical;
-                    break;
-                default:
-                    Rare = ItemRare.Legendary;
-                    break;
-            }
-        }
-
         protected virtual void SetType()
         {
-            
         }
 
         protected virtual void SetAttr()
         {
-            
         }
 
         protected virtual string NameGenerator()
@@ -74,7 +52,7 @@ namespace ConsoleApp1
     {
         private ItemArmorType _type;
         private int _rndType = Rnd.Next(1, Enum.GetNames(typeof(ItemArmorType)).Length);
-        
+
         protected override void SetType()
         {
             switch (_rndType)
@@ -111,8 +89,7 @@ namespace ConsoleApp1
     {
         private ItemWeaponType _type;
         private int _rndType = Rnd.Next(1, Enum.GetNames(typeof(ItemWeaponType)).Length);
-
-
+        
         protected override string NameGenerator()
         {
             string[] arr = new String[] {"of Hunters", "of Gods", "of Gangs"};
@@ -126,7 +103,7 @@ namespace ConsoleApp1
                 Str = Rnd.Next(1, 10);
                 Intl = Rnd.Next(1, 10);
                 Agl = Rnd.Next(1, 10);
-                if (_type == ItemWeaponType.Sword)
+                if (_type == ItemWeaponType.OneHandedSword)
                 {
                     Str += Rnd.Next(5, 10);
                 }
@@ -147,7 +124,7 @@ namespace ConsoleApp1
                 Str = Rnd.Next(11, 20);
                 Intl = Rnd.Next(11, 20);
                 Agl = Rnd.Next(11, 20);
-                if (_type == ItemWeaponType.Sword)
+                if (_type == ItemWeaponType.OneHandedSword)
                 {
                     Str += Rnd.Next(10, 20);
                 }
@@ -168,7 +145,7 @@ namespace ConsoleApp1
                 Str = Rnd.Next(21, 30);
                 Intl = Rnd.Next(21, 30);
                 Agl = Rnd.Next(21, 30);
-                if (_type == ItemWeaponType.Sword || _type == ItemWeaponType.Shield)
+                if (_type == ItemWeaponType.OneHandedSword || _type == ItemWeaponType.Shield)
                 {
                     Str += Rnd.Next(20, 30);
                 }
@@ -190,7 +167,7 @@ namespace ConsoleApp1
             switch (_rndType)
             {
                 case 1:
-                    _type = ItemWeaponType.Sword;
+                    _type = ItemWeaponType.OneHandedSword;
                     break;
                 case 2:
                     _type = ItemWeaponType.Bow;
@@ -225,10 +202,53 @@ namespace ConsoleApp1
         Legendary
     }
 
+    interface IGenRare
+    {
+        private static Random Rnd = new Random();
+        private static int _rndRare = Rnd.Next(1, Enum.GetNames(typeof(ItemRare)).Length);
+
+        public static ItemRare GenRare()
+        {
+            switch (_rndRare)
+            {
+                case 1:
+                    return ItemRare.Common;
+                case 2:
+                    return ItemRare.Rare;
+                case 3:
+                    return ItemRare.Mythical;
+                default:
+                    return ItemRare.Legendary;
+            }
+        }
+    }
+
+    interface IGenTypeOfItem
+    {
+        private static Random Rnd = new Random();
+        private static int _rndRare = Rnd.Next(1, Enum.GetNames(typeof(ItemRare)).Length);
+
+        
+    }
+
+    interface IGenItemType
+    {
+        private static Random rnd = new Random();
+        private static int _rndType = rnd.Next(1, 4);
+
+        public static ItemType GetType()
+        {
+            switch (ItemType)
+            {
+                
+            }
+        }
+    }
     enum ItemWeaponType
     {
         Dagger,
-        Sword,
+        OneHandedSword,
+        TwoHandedSword,
         Bow,
         Staff,
         Wand,
@@ -243,5 +263,13 @@ namespace ConsoleApp1
         Chest,
         Shoulder,
         Gloves
+    }
+
+    enum ItemType
+    {
+        Armor,
+        Weapon,
+        Potions,
+        Misc
     }
 }

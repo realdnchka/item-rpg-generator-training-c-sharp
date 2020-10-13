@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MtLm08davDRHvD0z+50JQwAyj9TEp1aqpN3OzckZ8oQonEyM9R6WITndlkQ0/XoweVCaBq9VR/gobZzUNNYXtQ==",
+  "dgSpecHash": "qmWtEMLPouFG9L0KYhRzb2H2TyNn7If/4ISLUizv9iZLChdUiEkB8NIokmV8weeQd5YECsE1jACOl6i318grtw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\realdnchka\\RiderProjects\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "/Users/danilch/projects/item-rpg-generator-training-c-sharp/ConsoleApp1/ConsoleApp1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
